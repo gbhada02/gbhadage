@@ -4,7 +4,7 @@ Feature: Train Search Functionality
  
  Background:
 Given I am on the trainsearch homePage
-Given I am on the trainsearch homePage
+And
   @Regression2
   Scenario Outline: Search train from City A to City B
     Given Search the train '<fromcity>' to '<tocity>' select date  '<date>' calender and class "class", '<BookingTye>'
