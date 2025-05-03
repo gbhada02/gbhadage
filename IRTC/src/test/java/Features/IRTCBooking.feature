@@ -4,7 +4,7 @@ Feature: Train Search Functionality
  
  Background:
 Given I am on the trainsearch homePage
-  @Regression1
+  @Regression2
   Scenario Outline: Search train from City A to City B
     Given Search the train '<fromcity>' to '<tocity>' select date  '<date>' calender and class "class", '<BookingTye>'
     Then I should see the list of available trains and verify the range and select the minimum price range
