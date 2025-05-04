@@ -3,6 +3,7 @@ package Utility;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -48,4 +49,17 @@ public static Properties prop;
 	public static void click(By locator) {
 		getElement(locator).click();
 	}
+	public static String getText(By locator) {
+		return getElement(locator).getText();
+	}
+	public static List<WebElement> getListofWebElement(By locator){
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+		return driver.findElements(locator);
+	}
+	public static void  waitforWebElement(WebElement ele ) {
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(ele));
+	}
 }
+
