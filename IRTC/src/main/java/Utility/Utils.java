@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -61,5 +62,26 @@ public static Properties prop;
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
+	
+	public static void scrolltoElement(By locator) {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",getElement(locator));
+	}
+public static void scrolltoElement(WebElement ele ) {
+	waitforWebElement(ele);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",ele);
+	}
+public static void clickByJavaScript(WebElement ele ) {
+	waitforWebElement(ele);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+   js.executeScript("arguments[0].click();", ele);
+	
+}
+public static String getText(WebElement ele ) {
+	waitforWebElement(ele);
+	return ele.getText();
+}
 }
 

@@ -1,6 +1,10 @@
 package Validation;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,13 +26,25 @@ public class IRTC_validation extends Utils implements Locators {
        click(clicksearchbutton);
 	}
 	
-	public void findMinimumAmount() {
+	public void findMinimumAmount() throws InterruptedException {
 		List<WebElement> list = getListofWebElement(Refresh_Sleeper);
 		
 		for(WebElement ele : list) {
+			scrolltoElement(ele);
 			waitforWebElement(ele);
-			ele.click();
+			Thread.sleep(2000);
+			clickByJavaScript(ele);
+			
 		}
+		List<Integer> set = new ArrayList<Integer>();
+		List<WebElement> listprice = getListofWebElement(getallsleeperprice);
+		for(WebElement ele : listprice) {
+		scrolltoElement(ele);
+		set.add(Integer.parseInt(getText(ele).split(" ")[1]));
+		}
+	    Collections.sort(set);
+		System.out.println(set.get(set.size()-1));
+		
 	}
 	
 	public void selectCalender(String Date ) throws InterruptedException {

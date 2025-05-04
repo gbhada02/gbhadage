@@ -17,4 +17,5 @@ By selectclass=By.xpath("//li[@role='option']/span[contains(text(),'Sleeper')]")
 By selectAllclass=By.xpath("//p-dropdown[@id='journeyClass']/div");
 By clicksearchbutton = By.xpath("//button[text()='Search']");
 By Refresh_Sleeper = By.xpath("//strong[text()='Sleeper (SL)']/parent::div/following-sibling::div[text()=' Refresh ']/span");
+By getallsleeperprice= By.xpath("//button[text()=' Book Now ']/parent::span/following-sibling::span/strong");
 }
