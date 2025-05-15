@@ -19,6 +19,7 @@ public class IRTC_validation extends Utils implements Locators {
 
 	public void searchTrain(String fromcity, String tocity,String Date , String classType,String BookingType ) throws InterruptedException {
 		 sendKeys(fromCity,fromcity);
+		 sendKeys(fromCity,fromcity);
 		 click(selectfirstcity);
 		 sendKeys(ToCity,tocity);
 		 click(selectfirstDistinationcity);
