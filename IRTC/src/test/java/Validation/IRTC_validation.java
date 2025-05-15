@@ -1,5 +1,6 @@
 package Validation;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,6 +9,8 @@ import java.util.TreeSet;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import com.aventstack.extentreports.Status;
 
 import Utility.Locators;
 import Utility.Utils;
@@ -20,7 +23,15 @@ public class IRTC_validation extends Utils implements Locators {
 		 sendKeys(ToCity,tocity);
 		 click(selectfirstDistinationcity);
          click(calender);
-         selectCalender(Date);
+         try {
+			selectCalender(Date);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
          click(selectAllclass);
        click(selectclass);
        click(clicksearchbutton);
@@ -44,10 +55,11 @@ public class IRTC_validation extends Utils implements Locators {
 		}
 	    Collections.sort(set);
 		System.out.println(set.get(set.size()-1));
-		
+		test.log(Status.PASS, "validates");
 	}
 	
-	public void selectCalender(String Date ) throws InterruptedException {
+	public void selectCalender(String Date ) throws InterruptedException, IOException {
+		System.out.println(Date);
 		String[] date = Date.split("/");
 		String day  = date[0];
 		String day1="";
@@ -76,6 +88,8 @@ public class IRTC_validation extends Utils implements Locators {
 			int monthfromcalnder=getMonth();
 			if(monthfromcalnder==month) {
 				getdynamicxpath(day1).click();
+				Pass("testcase is passed");
+				Fail("testcase fail");
 				break;
 				}
 			if(monthfromcalnder<month) {
@@ -154,10 +168,10 @@ public static int getMonth() throws InterruptedException {
 		monthfromcalnder=12;
 		break;
 	}
-	
 
   return monthfromcalnder;
 }
+
 	}
 
 
