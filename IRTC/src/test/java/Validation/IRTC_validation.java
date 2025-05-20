@@ -22,9 +22,8 @@ public class IRTC_validation extends Utils implements Locators {
 		 click(selectfirstcity);
 		 sendKeys(ToCity,tocity);
          click(selectfirstDistinationcity);
-        // click(calender);
-        // click(calender);
-         try {
+         click(calender);
+       try {
 			selectCalender(Date);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -40,8 +39,7 @@ public class IRTC_validation extends Utils implements Locators {
 	
 	public void findMinimumAmount() throws InterruptedException {
 		List<WebElement> list = getListofWebElement(Refresh_Sleeper);
-		
-		for(WebElement ele : list) {
+		 for(WebElement ele : list) {
 			scrolltoElement(ele);
 			waitforWebElement(ele);
 			Thread.sleep(2000);
