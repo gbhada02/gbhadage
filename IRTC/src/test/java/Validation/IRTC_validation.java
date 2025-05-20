@@ -14,26 +14,11 @@ import com.aventstack.extentreports.Status;
 
 import Utility.Locators;
 import Utility.Utils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 public class IRTC_validation extends Utils implements Locators {
-	
+
 	public void searchTrain(String fromcity, String tocity,String Date , String classType,String BookingType ) throws InterruptedException {
-         sendKeys(fromCity,fromcity);
-		 click(selectfirstcity);
-		 sendKeys(ToCity,tocity);
-		 click(selectfirstDistinationcity);
-         click(calender);
-         try {
-			selectCalender(Date);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-         sendKeys(fromCity,fromcity);
+		 sendKeys(fromCity,fromcity);
 		 click(selectfirstcity);
 		 sendKeys(ToCity,tocity);
 		 click(selectfirstDistinationcity);

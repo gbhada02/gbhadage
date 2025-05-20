@@ -15,7 +15,7 @@ public class IRTCBookingStep extends Utils {
 		IrtcValidation.searchTrain(fromcity,tocity,Date,classtype,BookingTye);
 	}
 	@Then("I should see the list of available trains and verify the range and select the minimum price range")
-	public void i_should_see_the_list_of_available_trains_and_verify_the_range_and_select_the_minimum_price_range() throws InterruptedException  {
+	public void i_should_see_the_list_of_available_trains_and_verify_the_range_and_select_the_minimum_price_range() throws InterruptedException {
 		IrtcValidation.findMinimumAmount();
 		
 	}
