@@ -21,8 +21,9 @@ public class IRTC_validation extends Utils implements Locators {
 		 sendKeys(fromCity,fromcity);
 		 click(selectfirstcity);
 		 sendKeys(ToCity,tocity);
-		 click(selectfirstDistinationcity);
-      //   click(calender);
+         click(selectfirstDistinationcity);
+         click(calender);
+
          try {
 			selectCalender(Date);
 		} catch (InterruptedException e) {
