@@ -23,7 +23,6 @@ public class IRTC_validation extends Utils implements Locators {
 		 sendKeys(ToCity,tocity);
          click(selectfirstDistinationcity);
          click(calender);
-        // click(calender);
          try {
 			selectCalender(Date);
 		} catch (InterruptedException e) {
@@ -40,7 +39,7 @@ public class IRTC_validation extends Utils implements Locators {
 	
 	public void findMinimumAmount() throws InterruptedException {
 		List<WebElement> list = getListofWebElement(Refresh_Sleeper);
-		
+		   click(clicksearchbutton);
 		for(WebElement ele : list) {
 			scrolltoElement(ele);
 			waitforWebElement(ele);
