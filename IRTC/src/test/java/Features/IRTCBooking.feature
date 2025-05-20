@@ -13,4 +13,5 @@ Given I am on the trainsearch homePage
  Examples:
  |fromcity| tocity | date | class | BookingType | 
  |Mumbai central | Goa Madgaon | 07/07/2025 | 3A | General | 
+  |Mumbai central | Goa Madgaon | 07/07/2025 | 3A | General | 
  
