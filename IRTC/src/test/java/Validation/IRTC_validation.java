@@ -22,7 +22,7 @@ public class IRTC_validation extends Utils implements Locators {
 		 click(selectfirstcity);
 		 sendKeys(ToCity,tocity);
          click(selectfirstDistinationcity);
-         click(calender);
+        // click(calender);
         // click(calender);
          try {
 			selectCalender(Date);
